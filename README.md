@@ -1,64 +1,44 @@
-💼 Sistema de Cadastro e Controle Financeiro
-📋 Visão Geral
-Este projeto é uma API REST desenvolvida em Java com Spring Boot, que oferece um sistema robusto para cadastro de dados pessoais e controle financeiro. Permite gerenciar pessoas, categorias e lançamentos financeiros, com validação rigorosa dos dados e persistência em banco MySQL.
+# 💼 Sistema de Cadastro e Controle Financeiro
 
-Desenvolvido como avaliação acadêmica para demonstrar competências em backend, validação, persistência e versionamento de banco.
+**`API REST em Java com Spring Boot para cadastro pessoal e controle financeiro`**
 
-🛠 Tecnologias Utilizadas
-🟦 Java 21
+Este projeto é uma API REST desenvolvida em **Java** com **Spring Boot**, que oferece um sistema robusto para cadastro de pessoas, categorias e lançamentos financeiros. Com validação rigorosa, persistência em **MySQL** e versionamento de banco usando **Flyway**, demonstra boas práticas de backend.
 
-🌱 Spring Boot 3.4.5
+---
 
-💾 Spring Data JPA
+### 🛠 Tecnologias Utilizadas
 
-✅ Spring Validation
+<img alt="Java" title="Java" width="20px" 
+style="padding-right:5px; vertical-align:middle;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" /> Java 21 <img alt="Spring Boot" title="Spring Boot" width="20px" style="padding-right:5px; vertical-align:middle;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" /> Spring Boot 3.4.5 💾 Spring Data JPA 
+✅ Spring Validation <img alt="MySQL" title="MySQL" width="20px" style="padding-right:5px; vertical-align:middle;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" /> MySQL 🔄 Flyway (migrações e versionamento do banco) 
+🧹 Lombok <img alt="Insomnia" title="Insomnia" width="20px" 
+style="padding-right:5px; vertical-align:middle;" src="https://kasmweb.com/assets/images/appImage7.png" /> Insomnia (testes de API REST)
 
-🐬 MySQL
+<br/>
 
-🔄 Flyway (migrações e versionamento do banco)
+---
 
-🧹 Lombok
+### ⚙️ Funcionalidades Principais
 
-🔧 Insomnia (testes de API REST)
+- 👤 Cadastro de pessoas com dados completos (logradouro, bairro, CEP, cidade, UF etc.) com validações específicas.  
+- 📂 Gerenciamento de categorias financeiras.  
+- 💰 Controle detalhado de lançamentos financeiros (descrição, datas, valores, observações, vínculo com categoria e pessoa).  
+- 🔐 Validação integrada para garantir integridade e consistência dos dados.  
+- 📑 Versionamento automático do banco com Flyway.  
 
-⚙️ Funcionalidades Principais
-👤 Cadastro de pessoas com dados completos (logradouro, bairro, CEP, cidade, UF etc.) com validações específicas.
+---
 
-📂 Gerenciamento de categorias financeiras.
+### 🗂 Estrutura de Dados
 
-💰 Controle detalhado de lançamentos financeiros (descrição, datas, valores, observações, vínculo com categoria e pessoa).
+| Entidade     | Campos principais                                                                                               |  
+|--------------|----------------------------------------------------------------------------------------------------------------|  
+| 👤 Pessoa    | nome, logradouro, bairro, cep (8 dígitos), cidade, uf, complemento, número                                      |  
+| 📂 Categoria | nome                                                                                                           |  
+| 💰 Lançamento| descricao, dataVencimento (hoje), dataPagamento, valor (0), observação (máx 200 chars), tipo, categoria, pessoa |  
 
-🔐 Validação integrada para garantir integridade e consistência dos dados.
+---
 
-📑 Versionamento automático do banco com Flyway.
+### 📌 Considerações Finais
 
-🗂 Estrutura de Dados
-Entidade	Campos principais
-👤 Pessoa	nome, logradouro, bairro, cep (8 dígitos), cidade, uf, complemento, número
-📂 Categoria	nome
-💰 Lançamento	descricao, dataVencimento (≥ hoje), dataPagamento, valor (>0), observação (máx 200 chars), tipo, categoria, pessoa
+Projeto desenvolvido na faculdade como parte de uma avaliação prática de desempenho, demonstrando boas práticas no desenvolvimento backend com Spring Boot, incluindo validação, persistência e versionamento de banco.
 
-🚀 Configuração e Execução
-🔧 Configure as credenciais do banco MySQL no arquivo application.properties.
-
-🛠 Execute as migrações do Flyway para criação das tabelas.
-
-▶️ Inicie a aplicação com:
-
-bash
-Copiar
-Editar
-mvn spring-boot:run
-📲 Utilize Insomnia ou ferramenta similar para consumir os endpoints REST.
-
-📡 Endpoints Principais para Testes
-POST /pessoas — Cadastro de pessoa
-
-POST /categorias — Cadastro de categoria
-
-POST /lancamentos — Cadastro de lançamento financeiro
-
-📌 Considerações Finais
-Projeto acadêmico que demonstra boas práticas no desenvolvimento backend com Spring Boot, incluindo validação, persistência e versionamento de banco.
-
-📩 Para dúvidas ou colaborações, sinta-se à vontade para entrar em contato.
